@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150810160413) do
+ActiveRecord::Schema.define(version: 20150810164956) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -48,10 +48,13 @@ ActiveRecord::Schema.define(version: 20150810160413) do
 
   create_table "services", force: :cascade do |t|
     t.string   "name"
-    t.integer  "avg_tip_percent"
-    t.integer  "avg_tip_flat_fee"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "avg_tip_percent", default: 0
+    t.integer  "min_tip",         default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "per_unit_tip",    default: 0
+    t.string   "unit_name",       default: ""
+    t.string   "notes",           default: ""
   end
 
 end

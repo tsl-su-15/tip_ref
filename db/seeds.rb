@@ -8,8 +8,13 @@
 
 Service.destroy_all
 services = [
-  { name: 'barista', avg_tip_percent: 0, avg_tip_flat_fee: 0 },
-  { name: 'bartender', avg_tip_percent: 15, avg_tip_flat_fee: 1 }
+  { name: 'barista', min_tip: 0 },
+  { name: 'bartender', avg_tip_percent: 15, min_tip: 1, per_unit_tip: 1, unit_name: 'drink' },
+  { name: 'delivery', avg_tip_percent: 10, min_tip: 2 },
+  { name: 'maitre d', min_tip: 5, notes: 'ranges between $5 and $25' },
+  { name: 'takeout', min_tip: 0, notes: 'unless they did something super awesome' },
+  { name: 'waiter', avg_tip_percent: 15, min_tip: 0, notes: '20% for exceptional service, 10% for poor service' },
+  { name: 'bellman', min_tip: 2, per_unit_tip: 1.5, unit_name: 'bag' },
 ]
 
 services.each do |service_hash|
