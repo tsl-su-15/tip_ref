@@ -15,6 +15,10 @@ services = [
   { name: 'takeout', min_tip: 0, notes: 'unless they did something super awesome' },
   { name: 'waiter', avg_tip_percent: 15, min_tip: 0, notes: '20% for exceptional service, 10% for poor service' },
   { name: 'bellman', min_tip: 2, per_unit_tip: 1.5, unit_name: 'bag' },
+  { name: 'concierge', min_tip: 5, notes: 'up to $20 for exceptional work, no tip required for directions'},
+  { name: 'hotel housekeeping', min_tip: 2, per_unit_tip: 2, unit_name: 'night', notes: 'tip daily'},
+  { name: 'parking valet', min_tip: 2, notes: 'up to $5 for good service'},
+  { name: 'room service', min_tip: 5, notes: 'unless included in gratiutiy'}
 ]
 
 services.each do |service_hash|
