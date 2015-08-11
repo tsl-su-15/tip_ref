@@ -1,5 +1,5 @@
 <h1>You should be tipping: $<%= @suggested_tip %></h1>
 <h2>Your total bill is: $<%= @total_bill %></h2>
-<h2>The average tip for this service is: <%= @avg_tip_percent %>% or $<%= @per_unit_tip %> per <%= @unit_name %></h2>
-<h2>The minimum tip for this service is: $<%= @min_tip %></h2>
-<p>Notes: <%= @notes %></p>
+<h2>The average tip for this service is: <%= @avg_tip_percent %>% or $<%= @service.per_unit_tip %> per <%= @service.unit_name %></h2>
+<h2>The minimum tip for this service is: $<%= @service.min_tip %></h2>
+<p>Notes: <%= @service.notes %></p>
