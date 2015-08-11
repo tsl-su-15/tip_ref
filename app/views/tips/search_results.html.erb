@@ -1,5 +1,22 @@
-<h1>You should be tipping: $<%= @suggested_tip %></h1>
-<h2>Your total bill is: $<%= @total_bill %></h2>
-<h2>The average tip for this service is: <%= @avg_tip_percent %>% or $<%= @service.per_unit_tip %> per <%= @service.unit_name %></h2>
-<h2>The minimum tip for this service is: $<%= @service.min_tip %></h2>
-<p>Notes: <%= @service.notes %></p>
+<h1>You should be tipping: <%= number_to_currency(@suggested_tip) %></h1>
+<% if @total_bill.present? %>
+  <h2>Your total bill is: <%= number_to_currency(@total_bill) %></h2>
+<% end %>
+<% if @service.avg_tip_percent > 0 || @service.per_unit_tip > 0 %>
+  <h2>The average tip for this service is:
+  <% if @service.avg_tip_percent > 0 && @service.per_unit_tip > 0 %>
+    <%= @service.avg_tip_percent %>% or $<%= @service.per_unit_tip %> per <%= @service.unit_name %>
+  <% elsif @service.avg_tip_percent > 0 %>
+    <%= @service.avg_tip_percent %>%
+  <% elsif @service.per_unit_tip > 0 %>
+    $<%= @service.per_unit_tip %> per <%= @service.unit_name %>
+  <% end %>
+  </h2>
+<% end %>
+<% if @service.min_tip > 0 %>
+  <h2>The minimum tip for this service is: $<%= @service.min_tip %></h2>
+<% end %>
+
+<% if @service.notes.present? %>
+  <p>Notes: <%= @service.notes %></p>
+<% end %>
