@@ -18,7 +18,18 @@ services = [
   { name: 'concierge', min_tip: 5, notes: 'up to $20 for exceptional work, no tip required for directions'},
   { name: 'hotel housekeeping', min_tip: 2, per_unit_tip: 2, unit_name: 'night', notes: 'tip daily'},
   { name: 'parking valet', min_tip: 2, notes: 'up to $5 for good service'},
-  { name: 'room service', min_tip: 5, notes: 'unless included in gratiutiy'}
+  { name: 'room service', min_tip: 5, notes: 'unless included in gratiutiy'},
+  { name: 'bus driver', min_tip: 1, notes: 'not mass transit, only if handling luggage'},
+  { name: 'cab driver', avg_tip_percent: 10, min_tip: 2 },
+  { name: 'chauffer', avg_tip_percent: 13 },
+  { name: 'gas station attendant', avg_tip_percent: 0, min_tip: 0 },
+  { name: 'porter/skycap', per_unit_tip: 1, unit_name: 'bag', notes: '$2 for heavy items' },
+  { name: 'barber/hairstylist', avg_tip_percent: 15 },
+  { name: 'manicurist', avg_tip_percent: 15 },
+  { name: 'spa service', avg_tip_percent: 20 },
+  { name: 'masseuse', avg_tip_percent: 13 },
+  { name: 'shoe shiner', min_tip: 2 },
+  { name: 'coat checker', min_tip: 1, per_unit_tip: 1, unit_name: 'coat' }
 ]
 
 services.each do |service_hash|
