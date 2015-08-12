@@ -6,19 +6,35 @@
         <label for="service_id">Service</label>
         <%= select_tag :service_id, options_from_collection_for_select(Service.all, :id, :name), class: 'form-control' %>
       </div>
-      <div class="form-group">
+      <div class="form-group" remote: true >
         <label for="amount_spent">Amount Spent (optional)</label>
         <input type="text" class="form-control" name="amount_spent" id="amount_spent" placeholder="$20">
       </div>
-      <div class="form-group">
-        <label for="num_items">Number of items (optional)</label>
+      <div class="form-group" remote: true>
+        <label for="num_items">Number of <span class = "unit_name"></span> (optional)</label>
         <input type="text" class="form-control" name="num_items" id="num_items" placeholder="3">
       </div>
 
       <button type="submit" class="btn btn-default">Submit</button>
     <% end %>
 
+
   </div>
 </div>
+<script>
 
+
+  $('#service_id').change(function(){
+    $.ajax({
+      type: "POST",
+      url: '/form_selection',
+      data: {
+        'service_id': $('#service_id').val()
+      },
+      dataType: 'script'
+    });
+  });
+
+
+</script>
 

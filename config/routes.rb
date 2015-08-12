@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'tips#search'
   get '/tips/search' => 'tips#search'
   post '/search_results' => 'tips#search_results'
+  post '/form_selection' => 'tips#form_selection'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,6 +1,22 @@
 class TipsController < ApplicationController
-  def search
+  # before_action :set_service, only: [:search]
 
+  def search
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
+  def form_selection
+    @service = Service.find(params[:service_id])
+
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.json
+    end
   end
 
   def search_results
@@ -26,4 +42,15 @@ class TipsController < ApplicationController
 
 
   end
+
+  # private
+
+  #   def set_service
+  #     @service = Service.find(params[:service_id])
+  #   end
+
+  #   def service_params
+  #     params.require(:services).permit(:name)
+  #   end
+
 end
