@@ -1,3 +1,3 @@
-# Team members
+# Team Members
 
 - Arjun Venkataswamy
