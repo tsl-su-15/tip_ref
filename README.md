@@ -2,3 +2,5 @@
 
 - Arjun Venkataswamy
 - Lee Stamper
+- Julie Kim
+
