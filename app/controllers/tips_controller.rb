@@ -21,7 +21,7 @@ class TipsController < ApplicationController
     end
 
     if @service.min_tip > 0 && @suggested_tip < @service.min_tip
-      @suggested_tip = @min_tip
+      @suggested_tip = @service.min_tip
     end
 
 
