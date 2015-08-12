@@ -4,7 +4,7 @@
     <%= form_tag '/search_results' do %>
       <div class="form-group">
         <label for="service_id">Service</label>
-        <%= select_tag :service_id, options_from_collection_for_select(Service.all, :id, :name), class: 'form-control' %>
+        <%= select_tag :service_id, options_from_collection_for_select(Service.all, :id, :name), class: 'form-control js-example-basic-single' %>
       </div>
       <div class="form-group" remote: true >
         <label for="amount_spent">Amount Spent (optional)</label>
@@ -21,6 +21,7 @@
 
   </div>
 </div>
+
 <script>
 
 
@@ -37,4 +38,9 @@
 
 
 </script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".js-example-basic-single").select2();
+});</script>
 
