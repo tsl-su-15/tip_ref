@@ -4,6 +4,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.5'
 gem "select2-rails"
+gem 'omniauth-facebook'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

@@ -40,8 +40,13 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Sign in</a></li>
-        <li><a href="#">Sign up</a></li>
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.name, '/users/edit' %></li>
+          <li><%= link_to "Sign out", destroy_user_session_path, method: :delete  %></li>
+        <% else %>
+        <li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
